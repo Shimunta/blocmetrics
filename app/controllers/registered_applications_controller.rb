@@ -5,6 +5,7 @@ class RegisteredApplicationsController < ApplicationController
   end
 
   def show
+    @events = @registered_application.events.group_by(&:name)
   end
 
   def edit
@@ -49,7 +50,7 @@ class RegisteredApplicationsController < ApplicationController
   private
 
   def find_id
-    @registered_applicaiton = current_user.registered_applications.find(params[:id])
+    @registered_application = current_user.registered_applications.find(params[:id])
   end
 
   def app_params
