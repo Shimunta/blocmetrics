@@ -9,6 +9,7 @@ class RegisteredApplicationsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
